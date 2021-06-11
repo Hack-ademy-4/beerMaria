@@ -1,2 +1,2 @@
-<footer style="height:200px;bg">
+<footer style="height:200px">
 </footer>

@@ -1,0 +1,62 @@
+*{font-family: 'Dancing Script', cursive;}
+p{font-family: 'Amiri', serif;}
+
+/*header entero*/
+
+header {
+    background-image:url(/media/tiradores.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+   
+}
+/* boton nav-buscar */
+.btn-nav{
+    font-size: 20px;
+    background-color: darkgoldenrod;
+    border:2px;
+
+}
+.logo{
+    font-size: 15px;
+    color:darkorange
+}
+/* titulos cabezera */
+.caja-rotulo{
+    background: rgba(239, 239, 239, 0.5);
+    padding: 5px;
+
+}
+.rotulo{
+    font-size: 100px;
+    text-shadow:  2px 2px 2px  rgba(69, 64, 64);
+    color:rgb(186, 164, 23);
+    text-align: center;
+}
+/* botones cards */
+.btn{
+    font-size: 40px;
+    color: black;
+    background-color: darkgoldenrod;
+    border:2px;
+    justify-content: center;
+}
+.card-body{
+
+    font-size: 20px;
+    background-color: #bee8be;
+}
+.card-title{
+    font-size: 35px;
+}
+.card-text{
+    font-size: 25px;
+}
+.nav-link {
+    size: 20px;
+ 
+}
+

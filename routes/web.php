@@ -24,3 +24,11 @@ Route::get('/', [HomeController::class, "home"]) ->name ("home");
  Route::get('/where', [HomeController::class, "whereWeAre"])->name("where-we-are"); 
 
  Route::get('/cervecerias',[BreweryController::class,"cervecerias"])->name("cervecerias");
+// detalle de cada cerveceria el indice me dice la posicion de cada una en la array 
+ Route::get('/cerveceria/{indice}',[BreweryController::class,"cerveceria"])->name("detalle");
+
+ //rutas form necesitamos una ruta get y otra post
+
+ Route::get('/cerveceria/{indice}',[BreweryController::class,"cerveceria"])->name("detalle");
+
+ Route::post('/cerveceria/{indice}',[BreweryController::class,"cerveceria"])->name("detalle");
