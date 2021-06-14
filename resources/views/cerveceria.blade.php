@@ -17,9 +17,9 @@
                     <img src="/media/theMarketCerveza.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$cerveceria['nombre']}}</h5>
-                        <p class="card-text">{{$cerveceria['desc']}}</p>
-                        <p class="card-text">Aforo{{$cerveceria['aforo']}}personas</p>
-                        <a href="#" class="btn ">más info</a>
+                        <p class="card-text">{{$cerveceria['description']}}</p>
+                        <p class="card-text">Aforo{{$cerveceria['capacity]}}personas</p>
+                        <a href="#" class="btn ">Más info</a>
                     </div>
                 </div>
         </div>
@@ -27,8 +27,6 @@
 
       </div>
 </div>
-
-
 @endsection
 
 

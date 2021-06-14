@@ -2,10 +2,57 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brewery;
 use Illuminate\Http\Request;
 
-class BreweryController extends Controller
-{ private $cervecerias=[     
+class BreweryController extends Controller 
+{
+  public function index()
+  {
+    $cervecerias = Brewery:: all();
+    return view ("cervecerias", compact ("cervecerias"));
+  }
+  public function store(Request $request)
+  {
+    $validateData = $request->validate(
+      [
+        'name'=> 'required',
+        'description'=> 'required',
+        'capacity'=> 'required'
+      ]);
+      //guardar la cerveceria
+      $cerveceria = ($validateData);
+    $cerveceria= new Brewery();
+    $cerveceria->name = $validateData['name'];
+    $cerveceria->description = $validateData['description'];
+    $cerveceria->capacity = $validateData['capacity'];
+
+    $cerveceria -> save();
+      
+      return redirect ()-> route("cervecerias.todas");
+  }
+  public function create()
+  {
+    return view ("cerveceria-new");
+  }
+  public function cervecerias()
+  { 
+    return view("cervecerias",["breweries"=>$this->cervecerias]);
+  } 
+  public function cerveceria($indice)
+  {
+    //recuperar info de cerveceria en input
+    
+    /*  $cerveceria=$this->cervecerias[$indice]; */
+    return view("cerveceria",compact("cerveceria"));
+  }
+    
+} 
+   
+
+
+ 
+/*    $cervecerias=[     
   
       [
       "nombre"=>"BEERS & TRAVELS BARs",
@@ -35,17 +82,10 @@ class BreweryController extends Controller
       "img"=>"",
       "aforo"=>26
       ]
-];
-     public function cervecerias ()
-        {  
-          
-      return view("cervecerias",["breweries"=>$this->cervecerias]);
-      }
-      public function cerveceria($indice)
-      {
-        //recuperar info de cerveceria en input
-        $cerveceria=$this->cervecerias[$indice];
-        $cerveceria = [      
+    ];  */
+    
+  
+       /*  $cerveceria = [      
   
           [
           "nombre"=>"Paulaner",
@@ -73,10 +113,7 @@ class BreweryController extends Controller
           "img"=>"",
           "aforo"=>26
           ]
-        ];
-        return view("cerveceria",compact("cerveceria"));
-     }
-       
-} 
+        ]; */
+    
 
     
