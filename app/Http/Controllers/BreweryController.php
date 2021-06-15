@@ -12,6 +12,8 @@ class BreweryController extends Controller
     $cervecerias = Brewery:: all();
     return view ("cervecerias", compact ("cervecerias"));
   }
+  // la store recoge los datos de la nueva cerveceria
+
   public function store(Request $request)
   {
     $validateData = $request->validate(
@@ -31,6 +33,7 @@ class BreweryController extends Controller
       
       return redirect ()-> route("cervecerias.todas");
   }
+  //vista donde tengo el formulario ruta get
   public function create()
   {
     return view ("cerveceria-new");
@@ -39,13 +42,23 @@ class BreweryController extends Controller
   { 
     return view("cervecerias",["breweries"=>$this->cervecerias]);
   } 
-  public function cerveceria($indice)
+  //para ver cada una de las cervecerias CRUD
+  public function show($id)
+  { 
+    $cerveceria = Brewery::findOrFail($id);
+    //le paso con la compact las cervecerias de la variable
+    return view("cervecerias-show", compact("cerveceria"));
+  } 
+  
+  /* public function destroy($id)
   {
-    //recuperar info de cerveceria en input
-    
-    /*  $cerveceria=$this->cervecerias[$indice]; */
-    return view("cerveceria",compact("cerveceria"));
+    $cerveceria = Brewery::findOrFail($id);
+
+    $cerveceria -> delete();
+
+    return redirect() -> route("cervecerias.todas");
   }
+    */
     
 } 
    

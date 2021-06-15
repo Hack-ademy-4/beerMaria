@@ -34,11 +34,10 @@ Route::get('/', [HomeController::class, "home"]) ->name ("home");
 
  Route::get('/cervecerias',[BreweryController::class,"cervecerias"])->name("cervecerias");
 // detalle de cada cerveceria el indice me dice la posicion de cada una en la array 
- Route::get('/cerveceria/{indice}',[BreweryController::class,"cerveceria"])->name("detalle");
+/*  Route::get('/cerveceria/{indice}',[BreweryController::class,"cerveceria"])->name("detalle");
+ */
 
 
- //detalle de una cerveceria
-Route::get('/cervecerias/{id}',[BreweryController::class,'show'])->name("cervecerias.show");
  
 //todas las cervecerias
 Route::get('/cervecerias',[BreweryController::class,'index'])->name("cervecerias.todas");
@@ -48,7 +47,15 @@ Route::get('/cerveceria-new',[BreweryController::class,"create"])->name("cervece
 
 Route::post('/cervecerias',[BreweryController::class,"store"])->name("cervecerias.store");
 
+ //detalle de una cerveceria
+ Route::get('/cervecerias/{id}',[BreweryController::class,'show'])->name("cervecerias.show");
 //editar una cerveceria
+/* 
 Route::get('/cerveceria/{id}/edit',[BreweryController::class,"edit"])->name("cervecerias.edit");
 
 Route::put('/cervecerias{id}',[BreweryController::class,"update"])->name("cervecerias.update");
+ */
+//eliminar cerveceria
+
+/* Route::delete('/cerveceria/{id}',[BreweryController::class,'destroy'])->name("delete.cervecerias");
+ */

@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="containe">
+<div class="container my-5 py-5">
     <div class="row">
         <div class="col-lg-8 mt-5 mt-lg-0">
             <form action="{{route("cervecerias.store")}}" method="post" role="form" class="php-email-form">
@@ -41,5 +41,5 @@
         
     </div>
 </div>
-
+@endsection
 

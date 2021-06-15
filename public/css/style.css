@@ -38,16 +38,16 @@ header {
 }
 /* botones cards */
 .btn{
-    font-size: 40px;
+    font-size: 20px;
     color: black;
-    background-color: darkgoldenrod;
+    background-color: #ffc007;
     border:2px;
     justify-content: center;
 }
 .card-body{
 
     font-size: 20px;
-    background-color: #bee8be;
+    background-color: #fff;
 }
 .card-title{
     font-size: 35px;

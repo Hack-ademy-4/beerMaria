@@ -39,27 +39,20 @@
 
 </div>
 <!-- cads -->
-<div class="container-fluid">
-    <div class="row py-5 ">
+<div class="container py-3 my-3">
+    <div class="row  ">
         <!-- el foreach itera sobre cada elemento del array breweries y lo hace dinamico para que salga cada card con la info correspondiente-->
         @foreach ($cervecerias as $cerveceria)
-        <div class="col-12 col-md-6 align-items-center justify-content-center">
-            <div class="card mx-auto py-3" style="width: 1000px">
-                <img src="/media/theMarketCerveza.jpeg" class="card-img-top" alt="...">
-            
-                <div class="card-body">
-                <!--la $cerveceria['nombre'] me da el nombre de cada card que esta en la array-->      
-                <!--la $loop->iteration me da el numero de cada card que esta en la array--> 
-                    <h5 class="card-title ">#{{$loop->iteration}} {{$cerveceria['nombre']}}</h5> 
-            <!--  descricion llave $cerveceria valor desc-->
-                    <p class="card-text">{{$cerveceria['description']}}</p>
-            <!--  aforo -->      
-                    <p class="card-text">Aforo {{$cerveceria['capacity']}} personas</p>
-                    <!-- enlace para el detalle de la ruta y el loop me da la posicion de cada una y enlaza la card con su pagina de detalle-->
-                    <a href="{{route('detalle',['indice'=>$loop->index])}}" class="btn btn-primary">más info</a>
-                </div>
+        <div class="col-12 col-md-4 align-items-center justify-content-around mb-3">
+        <div class="card border-0 shadow" style="width: 18rem;">
+            <img src="https://picsum.photos/300/200" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{$cerveceria->name}}</h5>
+              <p class="card-text">{{$cerveceria->description}}</p>
+              <p class="card-text">{{$cerveceria->capacity}}</p>
+              <a href="{{route('cervecerias.show',['id'=>$cerveceria->id])}}" class="btn btn-primary">Detalle</a>
             </div>
-
+        </div>
         </div>
         @endforeach
     </div>
